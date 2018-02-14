@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+    const movies = [
+        { name: "Serenity", rating: 7.9, price: 120, genre: ["scifi"], home: false, minAge: 15 },
+        { name: "Terminator 2", rating: 8.5, price: 140, genre: ["scifi"], home: true, minAge: 18 },
+        { name: "The room", rating: 3.6, price: 15, genre: ["drama"], home: true, minAge: 35 },
+        { name: "Ghost dog", rating: 7.5, price: 95, genre: ["action","drama"], home: false, minAge: 13 },
+        { name: "Inception", rating: 8.8, price: 220, genre: ["action","scifi"], home: true, minAge: 15 }
+    ];
+
+//movieNames using arrow function
+    let movieNames;
+    movieNames = movies.map(element => element.name);
+    console.log("movie names: ", movieNames );
+
+
+    //movieNames using anonymous function
+    //let movieNames;
+    //   movieNames = movies.map(function (element) {
+    //    return element.name;
+    //});
+    //   console.log("movie names: ", movieNames );
+
+
+    let availableMovies;
+    availableMovies = movies.filter(movies => movies.home===true);
+    let listingAvailableMovies = availableMovies.map(function(element) {
+        return element.name;
+    });
+        console.log("Available movies: ", listingAvailableMovies);
+
+
+    let pg15;
+    pg15 = movies.filter(movies => movies.minAge <= 15);
+    let listingPG15 = pg15.map(function (element) {
+        return element.name;
+    });
+        console.log("Movies PG15: ", listingPG15);
+
+    let goodMovies = movies.filter(movies => movies.rating >= 7);
+    let listGoodMovies = goodMovies.map(function (element) {
+        return element.name;
+    });
+        console.log("Best movies: ", listGoodMovies);
+
+
+    let totalPrice = movies.reduce(function (acc, element){
+
+        return acc + element.price;
+
+    }, 0);
+        console.log("Total Price all movies:", totalPrice);
+
+
+
+    let scifiMovies = movies.filter(movies => movies.genre.indexOf("scifi") !== -1);
+    let listingScifiMovies = scifiMovies.map(element => element.name);
+
+        console.log("Scifi movies: ", listingScifiMovies);
+
+
+    let averageRating = movies.reduce(function (acc, element) {
+        return acc + element.rating;
+    }, 0);
+        console.log("Movies average-rating: ", averageRating/movies.length);
+
+
+    let averageSciFiRating = movies.filter(movies => movies.genre.indexOf("scifi") >-1);
+    let listingAverageScifiRating = averageSciFiRating.reduce(function (acc, element) {
+        return acc + element.rating;
+    }, 0);
+        console.log("Average scifi-rating: ", listingAverageScifiRating/averageSciFiRating.length);
+
+    let genres = movies.reduce(function (acc, element) {
+        return acc.concat(element.genre.filter(function (g) {
+            return acc.indexOf(g) === -1;
+        }));
+    }, []);
+        console.log("Movie genres: ", genres);
+
+*/
+
+</script>
+</body>
+</html>
