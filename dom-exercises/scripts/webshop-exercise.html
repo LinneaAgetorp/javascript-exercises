@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<!-- övning objekt
+<label>Type in a number 1-4 to get a color</label>
+<input type= text id="colorNr">
+<button id="submitColor">Submit</button>
+-->
+
+<!-- övning Banken
+<label>Increase</label>
+<input id="increase"><button id="submitIncrease">Submit Increase</button>
+<br><br>
+<label>Decrease</label>
+<input id="decrease"><button id="submitDecrease">Submit Decrease</button>
+
+<p id="saldo">Balance: </p><span>0</span>
+-->
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+
+<script>
+
+    let box = $('.box');
+        box.css("background-color", "yellow");
+        box.css("width", "200px");
+        box.css("height", "200px");
+        box.css("border", "4px dotted black");
+
+    for(boxes of box){
+
+    }
+
+    //Bank account (not finished)
+    /*
+    let submitIncrease = document.getElementById("submitIncrease");
+    let submitDecrease = document.getElementById("submitDecrease");
+    let increaseEl = document.getElementById("increase").value;
+    let decreaseEl = document.getElementById("decrease").value;
+    let saldoElement = document.getElementById("saldo");
+
+
+
+
+    const getSaldo = function () {
+        const saldo = saldoElement.innerHTML;
+        return parseInt(saldo);
+    };
+
+    const getIncrease = function () {
+        const increase = increaseEl.value;
+        increaseEl.value = "";
+        return parseInt(increase);
+    };
+
+    const getDecrease =() => {
+        const decrease = decreaseEl.value;
+        decreaseEl.value="";
+        return parseInt(decrease);
+    };
+
+    const calculateIncrease = function () {
+        getSaldo() + getIncrease() = newSaldo;
+        return parseInt(newSaldo);
+    };
+
+
+    submitIncrease.addEventListener("click", getIncrease);
+    submitDecrease.addEventListener("click", getDecrease);
+
+*/
+
+
+
+
+
+
+
+
+
+    /* skriv ut tid+datum, klipp bort överflödiga sekunder + millisekunder.
+    let date = new Date();
+
+    console.log(date.toDateString() + " " + date.toTimeString().substr(0, 5));
+    */
+    /*
+    let color = {
+        1: "green",
+        2: "blue",
+        3: "red",
+        4: "white"
+    };
+
+    document.getElementById("submitColor").addEventListener("click", function () {
+        let colorNr = document.getElementById("colorNr").value;
+        let colorList = Object.keys(color);
+        for(let i of colorList){
+            if(i === colorNr){
+                console.log(i +": " + color[i])
+            }
+
+        }
+
+    })
+*/
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

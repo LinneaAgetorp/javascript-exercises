@@ -158,12 +158,12 @@ let displayName = document.getElementById("displayName");
 let input = prompt("Please enter your full name: ");
 
 
-let splattingString = function (stringToSplit, separator) {
+let splittingString = function (stringToSplit, separator) {
     let arrayOfString = stringToSplit.split(separator);
     displayName.innerHTML = "Your name is: " + arrayOfString[0].toUpperCase() + " " + arrayOfString[1].toLowerCase();
 };
 
-splattingString(input, space);
+splittingString(input, space);
 */
 
 
@@ -174,10 +174,10 @@ let hiddenText = document.getElementById("hiddenText");
 hiddenText.style.display = "none";
 
 let in_out = function (e) {
-    if (e.type == "mouseover") {
+    if (e.type === "mouseover") {
         hiddenText.style.display = "inline-block";
     }
-    else if (e.type == "mouseout") {
+    else if (e.type === "mouseout") {
         hiddenText.style.display = "none";
     }
 };
@@ -219,6 +219,7 @@ console.log(date.toDateString() + " " + date.toTimeString().substr(0, 5));
 
 
 */
+
 
 
 //Exercise 8 object of colors
@@ -299,4 +300,170 @@ const subtractSaldo = function () {
 
 increaseBtn.addEventListener("click", addSaldo);
 decreaseBtn.addEventListener("click", subtractSaldo);
+
+
+
+// ----------- Inlämning 1, webshop olika versioner
+
+
+
+/*
+
+                ---------- Version 1 -----------
+
+const form = {
+    "fName": {
+        validate: () => {
+            const inputField = document.forms["myForm"]['fName'];
+            if (inputField.value === "") {
+                document.getElementById("fname_err").innerHTML = 'Please fill out your first name';
+                inputField.className = "form-control errorBorder";
+            } else {
+                document.getElementById("fname_err").innerHTML = '';
+                inputField.className = "form-control";
+            }
+        }
+    },
+    "lName": {
+        validate: () => {
+            const inputField = document.forms["myForm"]['lName'];
+            if (inputField.value === "") {
+                document.getElementById("lname_err").innerHTML = 'Please fill out your last name';
+                inputField.className = "form-control errorBorder";
+            }
+            else {
+                document.getElementById("lname_err").innerHTML = '';
+                inputField.className = "form-control";
+            }
+        },
+    },
+    "email": {
+        validate: () => {
+            const inputField = document.forms["myForm"]["email"];
+            if (!inputField.value.includes('@') || inputField.value.length < 4) {
+                document.getElementById("email_err").innerHTML = 'Please fill out a valid email';
+                inputField.className = "form-control errorBorder";
+            }
+            else {
+                document.getElementById("email_err").innerHTML = '';
+                inputField.className = "form-control";
+            }
+        },
+    },
+    "street": {
+        validate: () => {
+            const inputField = document.forms["myForm"]["street"];
+            if (inputField.value === "") {
+                document.getElementById("street_err").innerHTML = 'Please fill out your street';
+                inputField.className = "form-control errorBorder";
+            }
+            else {
+                document.getElementById("street_err").innerHTML = '';
+                inputField.className = "form-control";
+            }
+        },
+    },
+    "zipcode": {
+        validate: () => {
+            const inputField = document.forms["myForm"]["zipCode"];
+            if (inputField.value === "") {
+                document.getElementById("zipcode_err").innerHTML = 'Please fill out your zip code';
+                inputField.className = "form-control errorBorder";
+            }
+            else {
+                document.getElementById("zipcode_err").innerHTML = '';
+                inputField.className = "form-control";
+            }
+        },
+    },
+    "city": {
+        validate: () => {
+            const inputField = document.forms["myForm"]["city"];
+
+            if (inputField.value === "") {
+                document.getElementById("city_err").innerHTML = 'Please fill out your city';
+                inputField.className = "form-control errorBorder";
+            }
+            else {
+                document.getElementById("city_err").innerHTML = '';
+                inputField.className = "form-control";
+            }
+        },
+    },
+};
+
+
+const validateForm = () => {
+
+    const allFieldNames = Object.keys(form);
+    allFieldNames.map((field) => form[field].validate());
+};
+
+
+
+*/
+
+/*
+                        ----------- Version 2 --------------
+
+
+const form = {
+    "fName": {
+        validate: (inputValue) => inputValue !== ""
+    },
+    "lName": {
+        validate: (inputValue) => inputValue !== ""
+    },
+    "email": {
+        validate: (inputValue) => inputValue.includes("@") || inputValue.length > 4
+    },
+    "street": {
+        validate: (inputValue) => inputValue !== ""
+    },
+    "zipCode": {
+        validate: (inputValue) => inputValue !== ""
+    },
+    "city": {
+        validate: (inputValue) => inputValue !== ""
+    },
+};
+
+
+
+
+const getValue = inputField => document.forms["myForm"][inputField].value;
+
+const validateForm = () => {
+    const allFieldNames = Object.keys(form);
+    allFieldNames.map((field) => {
+        const isValid = form[field].validate(getValue(field));
+        if (isValid) {
+            document.forms["myForm"][field].className = "form-control";
+        } else {
+            document.forms["myForm"][field].className = "form-control errorBorder";
+        }
+    });
+};
+*/
+
+
+//------- Version 3 -----------
+
+/*
+const setErrBorder = inputField => {document.forms["myForm"][inputField].className = "form-control errorBorder"};
+const removeErrBorder = inputField => {document.forms["myForm"][inputField].className = "form-control"};
+const getValue = inputField => document.forms["myForm"][inputField].value;
+
+let validateForm = function () {
+  const requiredFields = ["fName", "lName", "email", "street", "zipCode", "city"];
+  requiredFields.map(fieldName => {
+      if(getValue(fieldName) !== ""){
+          removeErrBorder(fieldName);
+      } else {
+          setErrBorder(fieldName);
+      }
+  })
+};
+*/
+
 
